@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+
+
 
 
 const Cart = props => {
   const cart = props.cart;
-
+ 
   const total = cart.reduce((total, product) => {
     return total + product.price*product.quantity}
     , 0);
@@ -32,6 +34,7 @@ const Cart = props => {
       <p>Total: {formatNumber(grandTotal)}</p>
       <br/>
       { props.children }
+      
     </div>
   );
 };
